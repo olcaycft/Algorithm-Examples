@@ -6,52 +6,26 @@ namespace PrimeNum
     {
         static void Main(string[] args)
         {
-            Console.Write("Sayı gir= ");
-            string a = Console.ReadLine();
-            int b = Convert.ToInt32(a);
-            int c;
-            if (b > 10) 
-            { 
-                c = ((b / 2)); 
-            }
-            else
+            int n = Convert.ToInt32(Console.ReadLine());
+            int input;
+            for(int i = 1; i <= n; i++)
             {
-                c = b;
-            }
-            
-            int sonuc = Isprime(c,b);
-            if (sonuc==0)
-            {
-                Console.WriteLine("Sayı asal değil");
-            }
-            else if (sonuc==1)
-            {
-                Console.WriteLine("Sayınız ASAL");
-            }
-        }
-        static int Isprime (int h, int c) {
-            if (c == 1)
-            {
-                return 1;
-            }
-            else if (c == 2)
-            {
-                return 1;
-            }
-            else
-            {
-                for (int i = 2; i < h; i++)
+                input = Convert.ToInt32(Console.ReadLine());
+                for(int j=2;j<=input/j;j++)
                 {
-                    if (c % i == 0)
+                    if(input%j==0)
                     {
-                        return 0;
-                    }
-                    else
-                    {
-                        continue;
+                        input=1;
                     }
                 }
-                return 1;
+                if(input==1)
+                {
+                    Console.WriteLine("Not prime");
+                }
+                else
+                {
+                    Console.WriteLine("Prime");    
+                }
             }
         }
     }
